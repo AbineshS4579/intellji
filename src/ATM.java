@@ -28,11 +28,16 @@ class bank{
                 int pt=s.nextInt();
                 System.out.print("Enter the initial depositing amount:");
                 int ib=s.nextInt();
-
-                bank o = new bank(pt,ib);
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();                bank o = new bank(pt,ib);
                 boolean l=true;
                 int d=2,y=0;
                 do {
+                    System.out.print("1.continue\n0.quiet\nEnter:");
+                    int gt=s.nextInt();
+                    if(gt!=1){
+                        System.out.println("Thank you welcome back.....");
+                        return;
+                    }
 
                 while(l) {
                     System.out.print("Enter ATM pin:");
@@ -71,9 +76,6 @@ class bank{
                         case 3:
                             System.out.println("Balance:" + o.show());
                             break;
-                        default:
-                            return;
-
                     }
                 }while(y<5);
                 System.out.println("Your limit is over....");
