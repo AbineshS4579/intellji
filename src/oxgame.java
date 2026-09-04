@@ -34,7 +34,7 @@ public class oxgame {
                     System.out.print("Enter " + (p == 1 ? 'X' : 'O') + " index value(1 to 9):");
                     int x = s.nextInt() - 1;
                     try {
-                    if(x>=9||x<=1){i--;throw new Exception("invalid index");}
+                    if(x>9||x<0){i--;throw new Exception("invalid index");}
                     int n = x / 3, m = x % 3;
                     while (a[n][m] != 0) {
                         System.out.print("reEnter:");
